@@ -6,12 +6,12 @@ st.title('Gerador de latitude e longitude')
 
 endereco = st.text_input(
         "Insira abaixo o endereço",
-        "Modelo: Rua, número, bairro, cidade, estado, país",
+        "",
         key="logradouro",
     )
 
 if st.button('Gerar Dados'):
-    
+
         url = 'https://nominatim.openstreetmap.org/search/' + urllib.parse.quote(endereco) +'?format=json'
 
         response = requests.get(url).json()
